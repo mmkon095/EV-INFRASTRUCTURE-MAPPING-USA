@@ -48,35 +48,34 @@ This project's findings and recommendations will have several benefits and impli
 
 EV Population dataset : This dataset shows the Battery Electric Vehicles (BEVs) that are currently registered through Washington State Department of Licensing (DOL) [API from the State of Washington Data Portal](https://data.wa.gov/Transportation/Electric-Vehicle-Population-Data/f6w7-q2d2)
 
-* geocoded_column
-* make
-* model
-* model_year
-* city
-* state
-* zip_code
-* ev_type
-* cafv_type
-* electric_range
-* electric_utility
+* geocoded_column - The center of the ZIP Code for the registered vehicle.
+* make - The manufacturer of the vehicle, determined by decoding the Vehicle Identification Number (VIN)
+* model - The model of the vehicle, determined by decoding the Vehicle Identification Number (VIN).
+* model_year - The model year of the vehicle, determined by decoding the Vehicle Identification Number (VIN).
+* city - The city in which the registered owner resides.
+* state - This is the geographic region of the country associated with the record. These addresses may be located in other states.
+* zip_code - The 5 digit zip code in which the registered owner resides.
+* ev_type - This distinguishes the vehicle as all electric or a plug-in hybrid.
+* cafv_type - This categorizes vehicle as Clean Alternative Fuel Vehicles (CAFVs) based on the fuel requirement and electric-only range requirement in House Bill 2042 as passed in the 2019 legislative session.
+* electric_range - Describes how far a vehicle can travel purely on its electric charge.
+* electric_utility - This is the electric power retail service territories serving the address of the registered vehicle.
 
-EV Stations dataset: This dataset shows all US publicly available electric charging locations.[API from the National Renewable Energy Laboratory (NREL) website and developer network](https://developer.nrel.gov/docs/transportation/alt-fuel-stations-v1/all/)
+EV Stations dataset: This dataset shows all US publicly available, planned and temporarily unavailable electric charging locations.[API from the National Renewable Energy Laboratory (NREL) website and developer network](https://developer.nrel.gov/docs/transportation/alt-fuel-stations-v1/all/)
 
-* geometry.coordinates
-* access_code
-* access_days_time
-* cards_accepted
-* date_last_confirmed
-* open_date
-* expected_date
-* station_name
-* station_phone
-* facility_type
-* city
-* intersection_directions
-* state
-* stree_address
-* zip_code
-* ev_connector_types
-* ev_network
-* ev_pricing
+* geometry.coordinates - GPS coordinates of the station
+* access_days_time - Hours of operation for the station
+* cards_accepted - A space-separated list of payment methods accepted 
+* date_last_confirmed - The date the station's details were last confirmed
+* open_date - The date that the station began offering the fuel.
+* expected_date - For planned stations, the date the station is expected to open or start carrying alternative fuel. For temporarily unavailable stations, the date the station is expected to reopen. This date is estimated.
+* station_name - The name of the station.
+* station_phone - The phone number of the station.
+* facility_type - The type of facility at which the station is located
+* city - The city of the station's location.
+* intersection_directions - Brief additional information about how to locate the station.
+* state - The two character code for the U.S. state or Canadian province/territory of the station's location.
+* stree_address - The street address of the station's location.
+* zip_code - The ZIP code (postal code) of the station's location
+* ev_connector_types - An array of strings identifying the connector types available at this station
+* ev_network - The name of the EV charging network.
+* ev_pricing - Information about whether and how much users must pay to use the EVSE port.
