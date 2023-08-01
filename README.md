@@ -19,7 +19,7 @@ The Problem Involves the Following Key Objectives:
 
 
 
-##Expected Deliverables:
+## Expected Deliverables:
 
 The deliverables for this project will include:
 
@@ -32,7 +32,7 @@ The deliverables for this project will include:
 * Data-driven recommendations for charging station expansion to enhance the overall EV infrastructure.
 
 
-##Benefits and Implications:
+## Benefits and Implications:
 
 This project's findings and recommendations will have several benefits and implications:
 
