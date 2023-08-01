@@ -44,7 +44,7 @@ This project's findings and recommendations will have several benefits and impli
 
 * The project will contribute valuable insights to the ongoing efforts to create a sustainable and well-connected electric vehicle charging infrastructure nationwide.
 
-##About the datasets:
+## About the datasets:
 
 EV Population dataset : [API from the State of Washington Data Portal](https://data.wa.gov/Transportation/Electric-Vehicle-Population-Data/f6w7-q2d2)
 
