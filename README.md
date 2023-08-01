@@ -43,3 +43,10 @@ This project's findings and recommendations will have several benefits and impli
 * Electric vehicle manufacturers and businesses can tailor marketing and distribution strategies based on the identified regions with higher EV adoption potential.
 
 * The project will contribute valuable insights to the ongoing efforts to create a sustainable and well-connected electric vehicle charging infrastructure nationwide.
+
+##About the datasets:
+
+EV Population dataset : [API from the State of Washington Data Portal](https://data.wa.gov/Transportation/Electric-Vehicle-Population-Data/f6w7-q2d2)
+
+EV Stations dataset: [API from the National Renewable Energy Laboratory (NREL) website and developer network](https://developer.nrel.gov/docs/transportation/alt-fuel-stations-v1/all/)
+
