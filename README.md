@@ -60,7 +60,7 @@ EV Population dataset : This dataset shows the Battery Electric Vehicles (BEVs) 
 * electric_range - Describes how far a vehicle can travel purely on its electric charge.
 * electric_utility - This is the electric power retail service territories serving the address of the registered vehicle.
 
-EV Stations dataset: This dataset shows all US publicly available, planned and temporarily unavailable electric charging locations.[API from the National Renewable Energy Laboratory (NREL) website and developer network](https://developer.nrel.gov/docs/transportation/alt-fuel-stations-v1/all/)
+EV Stations dataset: This dataset shows all US publicly available, planned and temporarily unavailable electric charging locations. [API from the National Renewable Energy Laboratory (NREL) website and developer network](https://developer.nrel.gov/docs/transportation/alt-fuel-stations-v1/all/)
 
 * geometry.coordinates - GPS coordinates of the station
 * access_days_time - Hours of operation for the station
