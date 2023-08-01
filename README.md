@@ -46,7 +46,37 @@ This project's findings and recommendations will have several benefits and impli
 
 ## About the datasets:
 
-EV Population dataset : [API from the State of Washington Data Portal](https://data.wa.gov/Transportation/Electric-Vehicle-Population-Data/f6w7-q2d2)
+EV Population dataset : This dataset shows the Battery Electric Vehicles (BEVs) that are currently registered through Washington State Department of Licensing (DOL) [API from the State of Washington Data Portal](https://data.wa.gov/Transportation/Electric-Vehicle-Population-Data/f6w7-q2d2)
 
-EV Stations dataset: [API from the National Renewable Energy Laboratory (NREL) website and developer network](https://developer.nrel.gov/docs/transportation/alt-fuel-stations-v1/all/)
+* geocoded_column
+* make
+* model
+* model_year
+* city
+* state
+* zip_code
+* ev_type
+* cafv_type
+* electric_range
+* electric_utility
 
+EV Stations dataset: This dataset shows all US publicly available electric charging locations.[API from the National Renewable Energy Laboratory (NREL) website and developer network](https://developer.nrel.gov/docs/transportation/alt-fuel-stations-v1/all/)
+
+* geometry.coordinates
+* access_code
+* access_days_time
+* cards_accepted
+* date_last_confirmed
+* open_date
+* expected_date
+* station_name
+* station_phone
+* facility_type
+* city
+* intersection_directions
+* state
+* stree_address
+* zip_code
+* ev_connector_types
+* ev_network
+* ev_pricing
