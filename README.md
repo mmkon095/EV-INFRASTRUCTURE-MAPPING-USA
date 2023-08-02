@@ -63,19 +63,22 @@ EV Population dataset : This dataset shows the Battery Electric Vehicles (BEVs) 
 EV Stations dataset: This dataset shows all US publicly available, planned and temporarily unavailable electric charging locations. [API from the National Renewable Energy Laboratory (NREL) website and developer network](https://developer.nrel.gov/docs/transportation/alt-fuel-stations-v1/all/)
 
 * geometry.coordinates - GPS coordinates of the station
-* access_days_time - Hours of operation for the station
-* cards_accepted - A space-separated list of payment methods accepted 
-* date_last_confirmed - The date the station's details were last confirmed
-* open_date - The date that the station began offering the fuel.
-* expected_date - For planned stations, the date the station is expected to open or start carrying alternative fuel. For temporarily unavailable stations, the date the station is expected to reopen. This date is estimated.
-* station_name - The name of the station.
-* station_phone - The phone number of the station.
-* facility_type - The type of facility at which the station is located
-* city - The city of the station's location.
-* intersection_directions - Brief additional information about how to locate the station.
-* state - The two character code for the U.S. state or Canadian province/territory of the station's location.
-* stree_address - The street address of the station's location.
-* zip_code - The ZIP code (postal code) of the station's location
-* ev_connector_types - An array of strings identifying the connector types available at this station
-* ev_network - The name of the EV charging network.
-* ev_pricing - Information about whether and how much users must pay to use the EVSE port.
+* access_days_time - hours of operation for the station
+* cards_accepted - a space-separated list of payment methods accepted 
+* date_last_confirmed - the date the station's details were last confirmed
+* open_date - the date that the station began offering the fuel.
+* expected_date - for planned stations, the date the station is expected to open or start carrying alternative fuel. For temporarily unavailable stations, the date the station is expected to reopen. This date is estimated.
+* station_name - the name of the station.
+* station_phone - the phone number of the station.
+* facility_type - the type of facility at which the station is located
+* city - the city of the station's location.
+* intersection_directions - brief additional information about how to locate the station.
+* state - the two character code for the U.S. state or Canadian province/territory of the station's location.
+* stree_address - the street address of the station's location.
+* zip_code - the ZIP code (postal code) of the station's location
+* ev_connector_types - an array of strings identifying the connector types available at this station
+* ev_network - the name of the EV charging network.
+* ev_pricing - information about whether and how much users must pay to use the EVSE port.
+* ev_level1_evse_num - the number of Level 1 EVSE ports available at the station
+* ev_level2_evse_num - the number of Level 2 EVSE ports available at the station
+* ev_dc_fast_num - the number of DC Fast EVSE ports available at the station
