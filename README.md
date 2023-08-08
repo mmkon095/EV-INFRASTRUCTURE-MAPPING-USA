@@ -94,3 +94,9 @@ EV Stations dataset: This dataset shows all US publicly available, planned and t
 * ev_dc_fast_num - the number of DC Fast EVSE ports available at the station
 
   <br/>
+
+  ## Architecture
+
+  ## Data Model
+
+  ## ETL Pipeline
