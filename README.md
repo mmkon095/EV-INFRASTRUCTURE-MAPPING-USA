@@ -22,7 +22,7 @@ The Problem Involves the Following Key Objectives:
 
 6. Recommendation for Expansion: Based on the analysis results, propose data-driven recommendations for the strategic expansion of EV charging infrastructure to bridge the identified gaps effectively.
 
-
+<br/>
 
 ## Expected Deliverables:
 
@@ -36,6 +36,7 @@ The deliverables for this project will include:
 
 * Data-driven recommendations for charging station expansion to enhance the overall EV infrastructure.
 
+<br/>
 
 ## Benefits and Implications:
 
@@ -48,6 +49,8 @@ This project's findings and recommendations will have several benefits and impli
 * Electric vehicle manufacturers and businesses can tailor marketing and distribution strategies based on the identified regions with higher EV adoption potential.
 
 * The project will contribute valuable insights to the ongoing efforts to create a sustainable and well-connected electric vehicle charging infrastructure nationwide.
+
+  <br/>
 
 ## About the datasets:
 
@@ -64,6 +67,8 @@ EV Population dataset : This dataset shows the Battery Electric Vehicles (BEVs) 
 * cafv_type - This categorizes vehicle as Clean Alternative Fuel Vehicles (CAFVs) based on the fuel requirement and electric-only range requirement in House Bill 2042 as passed in the 2019 legislative session.
 * electric_range - Describes how far a vehicle can travel purely on its electric charge.
 * electric_utility - This is the electric power retail service territories serving the address of the registered vehicle.
+
+  <br/>
 
 EV Stations dataset: This dataset shows all US publicly available, planned and temporarily unavailable electric charging locations. [API from the National Renewable Energy Laboratory (NREL) website and developer network](https://developer.nrel.gov/docs/transportation/alt-fuel-stations-v1/all/)
 
@@ -87,3 +92,5 @@ EV Stations dataset: This dataset shows all US publicly available, planned and t
 * ev_level1_evse_num - the number of Level 1 EVSE ports available at the station
 * ev_level2_evse_num - the number of Level 2 EVSE ports available at the station
 * ev_dc_fast_num - the number of DC Fast EVSE ports available at the station
+
+  <br/>
