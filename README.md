@@ -3,7 +3,7 @@
 ![EVEY1](https://github.com/mmkon095/EV-INFRASTRUCTURE-GAPS-USA/assets/80499087/c3a061d6-d2eb-4019-8406-ffa76672ed52)
 
 
-
+# Project Description
 As the adoption of electric vehicles (EVs) continues to grow in the United States, the need for an efficient and well-distributed charging infrastructure becomes increasingly crucial. However, the expansion of EV charging stations has not been uniform across all regions, leading to potential infrastructure gaps that hinder the widespread adoption of electric vehicles. The goal of this Data Engineering project is to assess the current state of EV infrastructure in the United States and identify areas with inadequate charging station coverage.
 
 
