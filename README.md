@@ -54,7 +54,7 @@ This project's findings and recommendations will have several benefits and impli
 
 ## About the datasets:
 
-EV Population dataset : This dataset shows the Battery Electric Vehicles (BEVs) that are currently registered through Washington State Department of Licensing (DOL) [API from the State of Washington Data Portal](https://data.wa.gov/Transportation/Electric-Vehicle-Population-Data/f6w7-q2d2)
+EV Population dataset : This dataset shows the Battery Electric Vehicles (BEVs) and Plug In Hybrid Electric Vehicles (PHEV) that are currently registered through Washington State Department of Licensing (DOL) [API from the State of Washington Data Portal](https://data.wa.gov/Transportation/Electric-Vehicle-Population-Data/f6w7-q2d2)
 
 * geocoded_column - The center of the ZIP Code for the registered vehicle.
 * make - The manufacturer of the vehicle, determined by decoding the Vehicle Identification Number (VIN)
