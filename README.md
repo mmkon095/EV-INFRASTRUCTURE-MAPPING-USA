@@ -55,7 +55,7 @@ This project's findings and recommendations will have several benefits and impli
 
 ## About the datasets:
 
-EV Population dataset : This dataset shows the registered Battery Electric Vehicles (BEVs) and Plug In Hybrid Electric Vehicles (PHEV) that are light-duty vehicles in the year 2022  [Available on the National Renewable Energy Laboratory (NREL) website and developer network](https://developer.nrel.gov/docs/transportation/alt-fuel-stations-v1/all/)
+EV Population dataset : This dataset shows the registered Battery Electric Vehicles (BEVs) and Plug In Hybrid Electric Vehicles (PHEV) that are light-duty vehicles in the year 2022  [Available on the US Dept of Energy's Alternative Fuels Data Center](https://afdc.energy.gov/vehicle-registration?year=2022)
 
 * Fuel Type - Electric or Plug-In Hybrid Electric
 * Count - Count of vehicles registered
