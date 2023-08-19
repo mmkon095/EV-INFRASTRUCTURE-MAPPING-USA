@@ -54,19 +54,12 @@ This project's findings and recommendations will have several benefits and impli
 
 ## About the datasets:
 
-EV Population dataset : This dataset shows the Battery Electric Vehicles (BEVs) and Plug In Hybrid Electric Vehicles (PHEV) that are currently registered through Washington State Department of Licensing (DOL) [API from the State of Washington Data Portal](https://data.wa.gov/Transportation/Electric-Vehicle-Population-Data/f6w7-q2d2)
+EV Population dataset : This dataset shows the registered Battery Electric Vehicles (BEVs) and Plug In Hybrid Electric Vehicles (PHEV) that are light-duty vehicles in the year 2022  [Available on the National Renewable Energy Laboratory (NREL) website and developer network](https://developer.nrel.gov/docs/transportation/alt-fuel-stations-v1/all/)
 
-* geocoded_column - The center of the ZIP Code for the registered vehicle.
-* make - The manufacturer of the vehicle, determined by decoding the Vehicle Identification Number (VIN)
-* model - The model of the vehicle, determined by decoding the Vehicle Identification Number (VIN).
-* model_year - The model year of the vehicle, determined by decoding the Vehicle Identification Number (VIN).
-* city - The city in which the registered owner resides.
-* state - This is the geographic region of the country associated with the record. These addresses may be located in other states.
-* zip_code - The 5 digit zip code in which the registered owner resides.
-* ev_type - This distinguishes the vehicle as all electric or a plug-in hybrid.
-* cafv_type - This categorizes vehicle as Clean Alternative Fuel Vehicles (CAFVs) based on the fuel requirement and electric-only range requirement in House Bill 2042 as passed in the 2019 legislative session.
-* electric_range - Describes how far a vehicle can travel purely on its electric charge.
-* electric_utility - This is the electric power retail service territories serving the address of the registered vehicle.
+* Fuel Type - Electric or Plug-In Hybrid Electric
+* Count - Count of vehicles registered
+* state - This is the geographic region of the country associated with the record
+
 
   <br/>
 
