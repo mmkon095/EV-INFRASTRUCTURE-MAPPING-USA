@@ -1,6 +1,7 @@
 # EV-INFRASTRUCTURE-GAPS-USA
 
-![EVEY1](https://github.com/mmkon095/EV-INFRASTRUCTURE-GAPS-USA/assets/80499087/c3a061d6-d2eb-4019-8406-ffa76672ed52)
+
+![EVEY2](https://github.com/mmkon095/EV-INFRASTRUCTURE-GAPS-USA/assets/80499087/a28dfa97-840d-43e7-97ea-3e0384894c73)
 
 <br/>
 
