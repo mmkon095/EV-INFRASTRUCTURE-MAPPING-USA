@@ -1,0 +1,11 @@
+pandas
+requests
+beautifulsoup4
+json
+geojson
+pandas-geojson
+time
+plotly
+folium
+altair==4.0
+streamlit==1.22.0
