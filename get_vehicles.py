@@ -3,7 +3,7 @@
 #Importing the necessary packages
 import requests, json
 from bs4 import BeautifulSoup
-from config import *
+#from config import *
 
 import streamlit as st
 import pandas as pd

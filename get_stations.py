@@ -2,7 +2,7 @@
 
 #Importing the necessary packages
 import requests, json
-from config import *
+#from config import *
 import streamlit as st
 
 stationsurl = st.secrets["stationsurl"]

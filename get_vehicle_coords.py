@@ -3,7 +3,7 @@
 #Importing the necessary packages
 import requests, json
 from bs4 import BeautifulSoup
-from config import *
+#from config import *
 
 import streamlit as st
 import pandas as pd
@@ -13,6 +13,9 @@ from folium.plugins import MarkerCluster
 from streamlit_folium import folium_static
 from sodapy import Socrata
 
+socratadomain = st.secrets["socratadomain"]
+socratadatasetidentifier = st.secrets["socratadatasetidentifier"]
+socratatoken = st.secrets["socratatoken"]
 
 @st.cache_data
 
