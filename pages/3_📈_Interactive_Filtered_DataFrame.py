@@ -78,7 +78,7 @@ with st.spinner("Loading Data..."):
     filtered_stations_df = stations_df if "All States" in selected_states else stations_df[stations_df['state'].isin(selected_states)]
 
     # Display filtered data based on selection
-    st.write("Charging stations from selected state:", filtered_stations_df)
+    st.write("Charging stations from selected state(s):", filtered_stations_df)
 
 
 
