@@ -3,8 +3,6 @@
 #Importing the necessary packages
 import requests, json
 from bs4 import BeautifulSoup
-from config import *
-
 import streamlit as st
 import pandas as pd
 import folium
@@ -15,7 +13,6 @@ from sklearn import preprocessing
 from streamlit_folium import st_folium
 from folium.plugins import MarkerCluster
 from streamlit_folium import folium_static
-
 from get_stations import get_stations
 from get_vehicles import get_vehicles
 
