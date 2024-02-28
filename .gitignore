@@ -1,5 +1,5 @@
-/config.py
-archive/
-__pycache__/
-.ipynb_checkpoints/
+config.py
+archive
+__pycache__
+.ipynb_checkpoints
 
