@@ -7,5 +7,6 @@ plotly
 folium
 millify
 streamlit-folium
+streamlit_extras
 altair==4.0
 streamlit==1.22.0
