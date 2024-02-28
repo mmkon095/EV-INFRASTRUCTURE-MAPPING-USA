@@ -8,12 +8,9 @@ st.set_page_config(layout="wide", page_title="EV Charging Station Dashboard", pa
 import os
 import requests, json
 from bs4 import BeautifulSoup
-#from config import *
-
 import streamlit as st
 import pandas as pd
 import folium
-import matplotlib.pyplot as plt
 from millify import millify
 
 from streamlit_folium import st_folium
