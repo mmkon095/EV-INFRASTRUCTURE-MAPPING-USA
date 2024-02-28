@@ -6,5 +6,6 @@ pandas-geojson
 plotly
 folium
 millify
+streamlit-folium
 altair==4.0
 streamlit==1.22.0
