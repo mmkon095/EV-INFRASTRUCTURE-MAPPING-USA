@@ -8,7 +8,7 @@ st.set_page_config(layout="wide", page_title="EV Charging Station Dashboard", pa
 import os
 import requests, json
 from bs4 import BeautifulSoup
-from config import *
+#from config import *
 
 import streamlit as st
 import pandas as pd
