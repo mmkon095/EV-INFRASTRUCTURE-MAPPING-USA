@@ -2,13 +2,10 @@
 import os
 import requests, json
 from bs4 import BeautifulSoup
-from config import *
 
 import streamlit as st
 import pandas as pd
 import folium
-import seaborn as sns
-import matplotlib.pyplot as plt
 from millify import millify
 
 from streamlit_folium import st_folium
