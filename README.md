@@ -17,7 +17,7 @@ The Problem Involves the Following Key Objectives:
 
 3. Geospatial Analysis: Perform geospatial analysis to visualize the distribution of existing charging stations and electric vehicle ownership on a map, identifying areas with high and low coverage.
 
-4. Infrastructure Gap Identification: Utilize data analysis techniques to identify regions or areas that exhibit inadequate charging station coverage relative to the number of electric vehicles present. This analysis should consider population density, driving patterns, and other relevant factors.
+4. Infrastructure Gap Identification: Utilize data analysis techniques to identify regions or areas that exhibit inadequate charging station coverage relative to the number of electric vehicles present.
 
 5. Quantify the Impact of Gaps: Quantify the potential impact of infrastructure gaps on EV adoption rates and the overall transition to electric mobility in different regions.
 
