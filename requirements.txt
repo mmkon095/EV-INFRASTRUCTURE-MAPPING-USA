@@ -1,7 +1,6 @@
 pandas
 requests
 beautifulsoup4
-json
 geojson
 pandas-geojson
 time
