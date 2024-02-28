@@ -13,7 +13,6 @@ from bs4 import BeautifulSoup
 import streamlit as st
 import pandas as pd
 import folium
-import seaborn as sns
 import matplotlib.pyplot as plt
 from millify import millify
 
