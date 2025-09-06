@@ -103,9 +103,9 @@ def main():
     # Check if map already exists in directory
     if os.path.exists("ev_charging_map.html"):
 
-        print("Map html file already exists")
+        print("Map html file already exists, attempting to load previous map...")
         # Display the HTML file using st.components.v1.html
-        with open("ev_charging_map.html", "r") as file:
+        with open("ev_charging_map.html", "r", encoding='utf-8') as file:
 
             map_html = file.read()
         st.components.v1.html(map_html, height=800, scrolling=True)
@@ -121,7 +121,7 @@ def main():
         #map = create_map()
         # Display the HTML file using st.components.v1.html
         print("Opening new map file")
-        with open("ev_charging_map.html", "r") as file:
+        with open("ev_charging_map.html", "r", encoding='utf-8') as file:
             map_html = file.read()
         
         st.components.v1.html(map_html, height=800, scrolling=True)

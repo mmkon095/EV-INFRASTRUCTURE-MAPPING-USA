@@ -33,7 +33,7 @@ def extract_vehicle_data(soup, year):
     rows = data_table.find_all("tr") if data_table else []
 
     vehicle_data = []
-    for row in rows[2:]:  # Skip header rows
+    for row in rows[1:]:  # Skip header rows
         columns = row.find_all("td")
         state = columns[0].text.strip()
         ev_count = columns[1].text.strip().replace(",", "")
