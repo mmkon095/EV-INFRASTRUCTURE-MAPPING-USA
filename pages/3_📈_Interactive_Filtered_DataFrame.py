@@ -3,7 +3,7 @@ import altair as alt
 
 from get_stations import get_stations
 from get_vehicles import get_vehicles
-from convertjsontodf import convertjsontodf
+from convertjsontodf import jsontodf
 
 
 if 'vehicles_df' not in st.session_state:
@@ -13,7 +13,7 @@ if 'stations_json' not in st.session_state:
     st.session_state.stations_json = get_stations()
 
 if 'stations_df' not in st.session_state:
-    st.session_state.stations_df = convertjsontodf() 
+    st.session_state.stations_df = jsontodf() 
 
 vehicles_df = st.session_state["vehicles_df"]
 stations_json = st.session_state["stations_json"]

@@ -8,7 +8,7 @@ stations_json = get_stations()
 
 @st.cache_data
 
-def convertjsontodf():
+def jsontodf():
     
 
     #Store records into pandas dataframe
