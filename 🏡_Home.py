@@ -27,7 +27,6 @@ from get_vehicles import get_vehicles
 #vehicles_df = get_vehicles()
 #stations_json = get_stations()
 
-st.cache_data.clear()
 
 if 'vehicles_df' not in st.session_state:
     st.session_state.vehicles_df = get_vehicles()
