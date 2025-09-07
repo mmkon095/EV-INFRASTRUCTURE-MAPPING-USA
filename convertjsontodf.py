@@ -94,3 +94,7 @@ def jsontodf():
     stations_df['state'] = stations_df['state'].map(abbrv_to_state)
 
     return stations_df
+
+if __name__ == "__main__":
+    stations_df = jsontodf()
+    #print(stations_df.head())

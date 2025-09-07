@@ -77,7 +77,7 @@ def get_vehicles():
 
 if __name__ == "__main__":
     vehicles_df = get_vehicles()
-    print(vehicles_df.head())
+    #print(vehicles_df.head())
 
 
 
