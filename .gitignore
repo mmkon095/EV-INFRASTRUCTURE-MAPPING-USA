@@ -2,4 +2,4 @@ config.py
 archive
 __pycache__
 .ipynb_checkpoints
-ev_charging_map
+ev_charging_map.html
