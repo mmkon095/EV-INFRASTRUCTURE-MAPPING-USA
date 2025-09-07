@@ -20,9 +20,9 @@ from streamlit_extras.metric_cards import style_metric_cards
 import altair as alt
 from folium.plugins import HeatMap
 
-from get_vehicles import get_vehicles
-from get_stations import get_stations
-from convertjsontodf import jsontodf
+#from get_vehicles import get_vehicles
+#from get_stations import get_stations
+#from convertjsontodf import jsontodf
 
 
 #vehicles_df = get_vehicles()
@@ -30,12 +30,15 @@ from convertjsontodf import jsontodf
 
 
 if 'vehicles_df' not in st.session_state:
+    from get_vehicles import get_vehicles
     st.session_state.vehicles_df = get_vehicles()
 
 if 'stations_json' not in st.session_state:
+    from get_stations import get_stations
     st.session_state.stations_json = get_stations()
 
 if 'stations_df' not in st.session_state:
+    from convertjsontodf import jsontodf
     st.session_state.stations_df = jsontodf() 
 
 vehicles_df = st.session_state["vehicles_df"]

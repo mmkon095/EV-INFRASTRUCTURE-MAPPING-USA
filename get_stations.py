@@ -71,4 +71,6 @@ def get_stations():
 
     return stations_json
 
-
+if __name__ == "__main__":
+    stations_json = get_stations()
+    #print(vehicles_df.head())

@@ -117,10 +117,10 @@ def main():
         add_data_to_map(map)
         # Save the Folium map as an HTML file
         map.save("ev_charging_map.html")
-        print("Saving new map file")
+        print("Saving new map file...")
         #map = create_map()
         # Display the HTML file using st.components.v1.html
-        print("Opening new map file")
+        print("Opening new map file...")
         with open("ev_charging_map.html", "r", encoding='utf-8') as file:
             map_html = file.read()
         
