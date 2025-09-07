@@ -20,9 +20,10 @@ from streamlit_extras.metric_cards import style_metric_cards
 import altair as alt
 from folium.plugins import HeatMap
 
+from get_vehicles import get_vehicles
 from get_stations import get_stations
 from convertjsontodf import jsontodf
-from get_vehicles import get_vehicles
+
 
 #vehicles_df = get_vehicles()
 #stations_json = get_stations()
