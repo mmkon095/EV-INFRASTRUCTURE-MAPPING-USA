@@ -15,15 +15,24 @@ from folium.plugins import MarkerCluster
 from streamlit_folium import folium_static
 from get_stations import get_stations
 from get_vehicles import get_vehicles
+from convertjsontodf import jsontodf
+
 
 if 'vehicles_df' not in st.session_state:
+    #from get_vehicles import get_vehicles
     st.session_state.vehicles_df = get_vehicles()
 
 if 'stations_json' not in st.session_state:
+    #from get_stations import get_stations
     st.session_state.stations_json = get_stations()
 
-stations_json = st.session_state["stations_json"]
+if 'stations_df' not in st.session_state:
+    #from convertjsontodf import jsontodf
+    st.session_state.stations_df = jsontodf()
+
 vehicles_df = st.session_state["vehicles_df"]
+stations_json = st.session_state["stations_json"]
+stations_df = st.session_state["stations_df"] 
 
 def create_map():
 
