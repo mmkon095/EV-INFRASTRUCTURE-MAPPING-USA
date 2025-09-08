@@ -7,7 +7,6 @@ stations_json = get_stations()
 
 
 @st.cache_data
-
 def jsontodf():
     
 

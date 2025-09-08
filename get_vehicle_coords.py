@@ -18,7 +18,6 @@ socratadatasetidentifier = st.secrets["socratadatasetidentifier"]
 socratatoken = st.secrets["socratatoken"]
 
 @st.cache_data
-
 def get_vehicle_coords():
     socrata_domain = socratadomain
     socrata_dataset_identifier = socratadatasetidentifier

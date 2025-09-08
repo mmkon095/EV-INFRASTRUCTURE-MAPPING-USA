@@ -10,7 +10,6 @@ stationsurl = st.secrets["stationsurl"]
 
 
 @st.cache_data
-
 def get_stations():
     #Establish connection to NREL API client
     response_stations = requests.get(stationsurl)
