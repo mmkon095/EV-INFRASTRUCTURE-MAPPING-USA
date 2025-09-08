@@ -59,7 +59,7 @@ def get_vehicles():
     headers = {'User-Agent': 'Mozilla/5.0 ...'}
     all_data = []
 
-    for year in range(2020, 2023):
+    for year in range(2020, 2024):
         url = f"https://afdc.energy.gov/vehicle-registration?year={year}"
         soup = fetch_and_parse(url, headers)
         year_data = extract_vehicle_data(soup, year)
@@ -77,7 +77,7 @@ def get_vehicles():
 
 if __name__ == "__main__":
     vehicles_df = get_vehicles()
-    #print(vehicles_df.head())
+    print(vehicles_df.tail())
 
 
 

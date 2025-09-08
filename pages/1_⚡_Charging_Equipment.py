@@ -122,9 +122,9 @@ st.markdown("<p style='font-family: Arial, Helvetica, sans-serif; font-color: wh
 #container for 4th set of visualizations
 dash_4 = st.container()
 
-vehicles_df_2022 = vehicles_df[(vehicles_df['Year'] != 2020) & (vehicles_df['Year'] != 2021)]
+vehicles_df_2023 = vehicles_df[vehicles_df['Year'] == 2023]
 
-registered_vehicles_by_state = vehicles_df_2022.groupby('State')['Count'].sum().sort_values(ascending=False)
+registered_vehicles_by_state = vehicles_df_2023.groupby('State')['Count'].sum().sort_values(ascending=False)
 
 charging_stations_by_state = stations_df.groupby('state').size()
 
@@ -150,14 +150,14 @@ with dash_4:
 
     with col1:
         st.write("")
-        st.write("Top 10 states with the lowest ratio of Charging Stations to Registered Vehicles:")
-        st.write(infrastructure_gap_df.head(10))
+        st.write("Top 10 states with the lowest ratio of Charging Stations to Registered Vehicles (2023):")
+        st.dataframe(infrastructure_gap_df.head(10))
 
 
     with col2:
         st.write("")
-        st.write("Top 10 states with the highest ratio of Charging Stations to Registered Vehicles:")
-        st.write(infrastructure_gap_df.tail(10))
+        st.write("Top 10 states with the highest ratio of Charging Stations (current) to Registered Vehicles (2023):")
+        st.dataframe(infrastructure_gap_df.tail(10))
 
 
 

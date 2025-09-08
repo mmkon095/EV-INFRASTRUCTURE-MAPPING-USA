@@ -20,8 +20,8 @@ from streamlit_extras.metric_cards import style_metric_cards
 import altair as alt
 from folium.plugins import HeatMap
 
-from get_vehicles import get_vehicles
-from get_stations import get_stations
+#from get_vehicles import get_vehicles
+#from get_stations import get_stations
 #from convertjsontodf import jsontodf
 
 
@@ -30,11 +30,11 @@ from get_stations import get_stations
 
 
 if 'vehicles_df' not in st.session_state:
-    #from get_vehicles import get_vehicles
+    from get_vehicles import get_vehicles
     st.session_state.vehicles_df = get_vehicles()
 
 if 'stations_json' not in st.session_state:
-    #from get_stations import get_stations
+    from get_stations import get_stations
     st.session_state.stations_json = get_stations()
 
 if 'stations_df' not in st.session_state:
@@ -54,7 +54,7 @@ dash_1 = st.container()
 with dash_1:
     st.markdown("<h2 style='text-align: center; font-family: Arial, Helvetica, sans-serif;'>EV Dashboard</h2>", unsafe_allow_html=True)
     st.write("")
-    st.markdown(f"<p style='font-family: Arial, Helvetica, sans-serif;'>From the year 2020 to 2022, the number of registered electric vehicles in the US has more than doubled in size by a whopping <span style='color: #007bff;'><b>114%</b></span>. To cater to the growing number of EVs, a substantial network of charging stations for both private users and fleet operations is essential. Individuals and organizations looking into electric vehicles (EVs), including fully electric and plug-in hybrid models, require access to charging facilities. Typically, this begins with home-based or fleet-based charging setups. Workplace and public charging points further support the shift to EVs by providing convenient charging solutions in frequently visited places. There are currently <b><span style='color: #007bff;'>{len(stations_json)} charging stations</b></span> that are publicly available across the states in the US.</p>", unsafe_allow_html=True)
+    st.markdown(f"<p style='font-family: Arial, Helvetica, sans-serif;'>From the year 2020 to 2023, the number of registered electric vehicles in the US has more than doubled in size by a whopping <span style='color: #007bff;'><b>114%</b></span>. To cater to the growing number of EVs, a substantial network of charging stations for both private users and fleet operations is essential. Individuals and organizations looking into electric vehicles (EVs), including fully electric and plug-in hybrid models, require access to charging facilities. Typically, this begins with home-based or fleet-based charging setups. Workplace and public charging points further support the shift to EVs by providing convenient charging solutions in frequently visited places. There are currently <b><span style='color: #007bff;'>{len(stations_json)} charging stations</b></span> that are publicly available across the states in the US.</p>", unsafe_allow_html=True)
     st.write("")
 
 
@@ -84,18 +84,20 @@ with dash_2:
     # Calculate Total Vehicle Counts by Year
 
     #Total Vehicle Counts in 2020
-    vehicles_df_2020 = vehicles_df[(vehicles_df['Year'] != 2021) & (vehicles_df['Year'] != 2022)]
+    vehicles_df_2020 = vehicles_df[vehicles_df['Year'] == 2020]
 
     #Total Vehicle Counts in 2021
-    vehicles_df_2021 = vehicles_df[(vehicles_df['Year'] != 2020) & (vehicles_df['Year'] != 2022)]
+    vehicles_df_2021 = vehicles_df[vehicles_df['Year'] == 2021]
 
     #Total Vehicle Counts in 2022
-    vehicles_df_2022 = vehicles_df[(vehicles_df['Year'] != 2020) & (vehicles_df['Year'] != 2021)]
+    vehicles_df_2022 = vehicles_df[vehicles_df['Year'] == 2022]
 
+    #Total Vehicle Counts in 2023
+    vehicles_df_2023 = vehicles_df[vehicles_df['Year'] == 2023]
     
 
 
-    col1, col2, col3 = st.columns(3)
+    col1, col2, col3, col4 = st.columns(4)
 
     #create column span
     with col1:
@@ -134,6 +136,18 @@ with dash_2:
         )
         st.altair_chart(chart,use_container_width=True)
 
+    with col4:
+        col4.metric(label="Number of registered EV's in 2023", value= "$"+millify(yearly_total_count[2023], precision=2), delta=(millify(yearly_change[2023])+"%"))
+        st.write("")
+        st.write("")
+        
+        vehicle_types_count_2023 = vehicles_df_2023.groupby(['Fuel Type'])['Count'].sum().reset_index()
+        chart = alt.Chart(vehicle_types_count_2023).mark_arc().encode(
+            theta= alt.Theta(field="Count", type="quantitative"),
+            color= alt.Color(field="Fuel Type", type="nominal"),
+        )
+        st.altair_chart(chart,use_container_width=True)
+
     #style the metric card
     style_metric_cards(border_left_color="#DBF227", background_color=("#000000"))
 
@@ -151,14 +165,14 @@ with dash_3:
     # create columns for both graph
     col1,col2 = st.columns(2)
 
-    #Aggregating only the number of registered vehicles in 2022 by state
-    vehicles_df_2022 = vehicles_df[(vehicles_df['Year'] != 2020) & (vehicles_df['Year'] != 2021)]
+    #Aggregating only the number of registered vehicles in 2023 by state
+    vehicles_df_2023 = vehicles_df[vehicles_df['Year'] == 2023]
 
-    registered_vehicles_by_state = vehicles_df_2022.groupby('State')['Count'].sum().sort_values(ascending=False)
+    registered_vehicles_by_state = vehicles_df_2023.groupby('State')['Count'].sum().sort_values(ascending=False)
 
-    top_states_ev_2022 = registered_vehicles_by_state.nlargest(10)
+    top_states_ev_2023 = registered_vehicles_by_state.nlargest(10)
 
-    top_states_ev_2022 = pd.DataFrame(top_states_ev_2022).reset_index()
+    top_states_ev_2023 = pd.DataFrame(top_states_ev_2023).reset_index()
 
     
 
@@ -166,22 +180,22 @@ with dash_3:
     
     charging_stations_by_state = stations_df.groupby('state').size()
     top_charging_stations_by_state = charging_stations_by_state.nlargest(10)
-    top_charging_stations_by_state = pd.DataFrame(top_charging_stations_by_state).reset_index()
-
+    top_charging_stations_by_state = ( pd.DataFrame(top_charging_stations_by_state).reset_index().rename(columns={0: "num_stations", "index": "state"}) )
+    
 
     with col1:
-        chart = alt.Chart(top_states_ev_2022).mark_bar().encode(
+        chart = alt.Chart(top_states_ev_2023).mark_bar().encode(
                 x=alt.X('Count:Q', title='Number of Registered EVs'),
                 y=alt.Y('State:N', sort='-x', title='State')   
             ).properties(
-                title="Top 10 States with the most registered EVs in 2022"
+                title="Top 10 States with the most registered EVs in 2023"
             )
                  
         st.altair_chart(chart,use_container_width=True)
 
     with col2:
         chart = alt.Chart(top_charging_stations_by_state).mark_bar().encode(
-                x=alt.X('0:Q', title='Number of Charging Stations'),
+                x=alt.X('num_stations:Q', title='Number of Charging Stations'),
                 y=alt.Y('state:N', sort='-x', title='State')
         ).properties(
                 title="Top 10 States with the most charging stations (to date)"
@@ -193,10 +207,10 @@ with dash_3:
 # Aggregating the number of charging stations by state
 charging_stations_by_state = stations_df.groupby('state').size()
 
-#Aggregating only the number of registered vehicles in 2022
-vehicles_df_2022 = vehicles_df[(vehicles_df['Year'] != 2020) & (vehicles_df['Year'] != 2021)]
+#Aggregating only the number of registered vehicles in 2023
+vehicles_df_2023 = vehicles_df[vehicles_df['Year'] == 2023]
 
-registered_vehicles_by_state = vehicles_df_2022.groupby('State')['Count'].sum().sort_values(ascending=False).reset_index()
+registered_vehicles_by_state = vehicles_df_2023.groupby('State')['Count'].sum().sort_values(ascending=False).reset_index()
 
 
 
@@ -215,8 +229,8 @@ pivot_df = vehicles_df.pivot_table(index=['State', 'Fuel Type'], columns='Year',
 state_yearly_totals = vehicles_df.groupby(['State', 'Year'])['Count'].sum().unstack()
 
 
-# Then calculate the growth rate from 2020 to 2022 for each state
-state_growth = (state_yearly_totals[2022] - state_yearly_totals[2020]) / state_yearly_totals[2020] * 100
+# Then calculate the growth rate from 2020 to 2023 for each state
+state_growth = (state_yearly_totals[2023] - state_yearly_totals[2020]) / state_yearly_totals[2020] * 100
 
 
 # Fuel Type distribution
@@ -224,8 +238,8 @@ fuel_type_popularity = vehicles_df.groupby(['Fuel Type', 'Year'])['Count'].sum()
 
 
 #Identify the states with the highest number of electric vehicles:
-electric_vehicles_2022 = vehicles_df[(vehicles_df['Year'] == 2022) & (vehicles_df['Fuel Type'] == 'Electric')]
-top_states_ev_2022 = electric_vehicles_2022.groupby('State')['Count'].sum().sort_values(ascending=False)
+electric_vehicles_2023 = vehicles_df[(vehicles_df['Year'] == 2023) & (vehicles_df['Fuel Type'] == 'Electric')]
+top_states_ev_2023 = electric_vehicles_2023.groupby('State')['Count'].sum().sort_values(ascending=False)
 
 
 #Calculate the year-over-year percentage change in vehicle counts:
@@ -235,6 +249,7 @@ yearly_change = vehicles_df.pivot_table(values='Count', index=['State', 'Fuel Ty
 # Total Vehicle Counts by Year
 total_vehicles_by_year = pivot_df.sum(numeric_only=True)
 
+print("Home page successfully loaded!!")
 
 
 

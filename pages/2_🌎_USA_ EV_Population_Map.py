@@ -1,5 +1,3 @@
-#!pip install -r requirements.txt
-
 #Importing the necessary packages
 import requests, json
 from bs4 import BeautifulSoup
@@ -33,6 +31,21 @@ if 'stations_df' not in st.session_state:
 vehicles_df = st.session_state["vehicles_df"]
 stations_json = st.session_state["stations_json"]
 stations_df = st.session_state["stations_df"] 
+
+
+# --- Button section at the top ---
+#st.button("🔄 Refresh Map")
+#st.button("📥 Fetch New Data & Rebuild Map")
+#col1, col2 = st.columns(2)
+
+# refresh_clicked = st.button("🔄 Reload Map", disabled=True)
+# fetch_clicked = st.button("📥 Refresh Data & Rebuild Map", disabled=True)
+
+if os.path.exists("ev_charging_map.html"):
+    refresh_clicked = st.button("🔄 Reload Map", disabled=True)
+    fetch_clicked = st.button("📥 Refresh Data & Rebuild Map", disabled=True)
+
+
 
 def create_map():
 
@@ -118,6 +131,7 @@ def main():
 
             map_html = file.read()
         st.components.v1.html(map_html, height=800, scrolling=True)
+        print("Existing Map loaded successfully...")
     
     else:
         print("Map html file does not exist, running function to create map()....")
@@ -134,28 +148,51 @@ def main():
             map_html = file.read()
         
         st.components.v1.html(map_html, height=800, scrolling=True)
+        print("New map loaded successfully!!")
 
 if __name__ == "__main__":
     main()
 
 
+# --- Button actions ---
+if refresh_clicked:
+    with st.empty():
+        main()
+
+elif fetch_clicked:
+    with st.empty():
+        if os.path.exists("ev_charging_map.html"):
+            os.remove("ev_charging_map.html")
+            get_stations()
+            get_vehicles()
+            main()
+
+# else:
+#     with st.empty():
+#         main()
+
+
+
+
+
+
 
 
 #Trigger data update to remove existing map and load a new one
-if st.button("Refresh Map"):
-    st.empty()
-    os.remove("ev_charging_map.html")
-    main()
+# if st.button("Refresh Map"):
+#     st.empty()
+#     os.remove("ev_charging_map.html")
+#     main()
 
-if st.button("Fetch new data and map"):
-    st.empty()
-    if os.path.exists("ev_charging_map.html"):
-        os.remove("ev_charging_map.html")
-        get_stations()
-        get_vehicles()
-        main()
+# if st.button("Fetch new data and map"):
+#     st.empty()
+#     if os.path.exists("ev_charging_map.html"):
+#         os.remove("ev_charging_map.html")
+#         get_stations()
+#         get_vehicles()
+#         main()
 
-    else:
-        get_stations()
-        get_vehicles()
-        main()
+#     else:
+#         get_stations()
+#         get_vehicles()
+#         main()
