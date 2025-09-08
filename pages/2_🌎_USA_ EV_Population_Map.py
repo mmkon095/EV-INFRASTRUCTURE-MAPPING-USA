@@ -38,13 +38,16 @@ stations_df = st.session_state["stations_df"]
 #st.button("📥 Fetch New Data & Rebuild Map")
 #col1, col2 = st.columns(2)
 
-# refresh_clicked = st.button("🔄 Reload Map", disabled=True)
-# fetch_clicked = st.button("📥 Refresh Data & Rebuild Map", disabled=True)
+refresh_clicked = st.button("🔄 Reload Map")
+fetch_clicked = st.button("📥 Refresh Data & Rebuild Map")
 
-if os.path.exists("ev_charging_map.html"):
-    refresh_clicked = st.button("🔄 Reload Map", disabled=True)
-    fetch_clicked = st.button("📥 Refresh Data & Rebuild Map", disabled=True)
-
+# if os.path.exists("ev_charging_map.html"):
+#     refresh_clicked = st.button("🔄 Reload Map", disabled=True)
+#     fetch_clicked = st.button("📥 Refresh Data & Rebuild Map", disabled=True)
+#     print("Map file exists, buttons disabled")
+# else:
+#     refresh_clicked = st.button("🔄 Reload Map", disabled=False)
+#     fetch_clicked = st.button("📥 Refresh Data & Rebuild Map", disabled=False)
 
 
 def create_map():
