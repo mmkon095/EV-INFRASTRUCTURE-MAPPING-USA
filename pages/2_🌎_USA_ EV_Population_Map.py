@@ -60,7 +60,7 @@ def create_map():
     
     #return map
 
-@st.cache_resource
+
 def add_data_to_map(map):
 
     #Create a marker cluster to optimize loading the map
