@@ -11,7 +11,7 @@ stationsurl = st.secrets["stationsurl"]
 
 @st.cache_data
 def get_stations():
-    #Establish connection to NREL API client
+    #Establish connection to NLR API client
     response_stations = requests.get(stationsurl)
     #Parse and load geojson records from client
     parse_stations = json.loads(response_stations.text)

@@ -64,7 +64,7 @@ EV Population dataset : This dataset shows the registered Battery Electric Vehic
 
   <br/>
 
-EV Stations dataset: This dataset shows all US publicly available, planned and temporarily unavailable electric charging locations. [API from the National Renewable Energy Laboratory (NREL) website and developer network](https://developer.nrel.gov/docs/transportation/alt-fuel-stations-v1/all/)
+EV Stations dataset: This dataset shows all US publicly available, planned and temporarily unavailable electric charging locations. [API from the National Laboratory of the Rockies (NLR) website and developer network](https://developer.nlr.gov/docs/transportation/alt-fuel-stations-v1/all/)
 
 * geometry.coordinates - GPS coordinates of the station
 * access_days_time - hours of operation for the station
