@@ -25,7 +25,7 @@ st.write("")
 
 
 st.subheader('Charging Stations Data:')
-st.markdown("The data pertaining to electric vehicle charging stations is sourced from the National Renewable Energy Laboratory's developer network. It includes information such as latitude, longitude, station name, state, directions etc......")
+st.markdown("The data pertaining to electric vehicle charging stations is sourced from the National Laboratory of the Rockies (NLR) developer network formerly the National Renewable Energy Laboratory. It includes information such as latitude, longitude, station name, state, directions etc......")
 
 #st.write(stations_df.head())
 st.dataframe(stations_df, use_container_width=True)
