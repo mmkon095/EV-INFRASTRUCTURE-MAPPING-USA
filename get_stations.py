@@ -2,6 +2,8 @@
 
 #Importing the necessary packages
 import requests, json
+from requests.adapters import HTTPAdapter
+from urllib3.util import Retry
 #from config import *
 import streamlit as st
 
@@ -11,8 +13,26 @@ stationsurl = st.secrets["stationsurl"]
 
 @st.cache_data
 def get_stations():
+
+    # 1. Create a session
+    session = requests.Session()
+
+    # 2. Set up retry rules
+    retries = Retry(
+        total=3,            # Total number of retries
+        backoff_factor=1,   # Wait 1s, 2s, 4s between retries
+        status_forcelist=[500, 502, 503, 504],
+        raise_on_status=False
+    )
+
+    # 3. Mount the retry strategy to the session
+    adapter = HTTPAdapter(max_retries=retries)
+    session.mount("https://", adapter)
+    session.mount("http://", adapter)
+
     #Establish connection to NLR API client
-    response_stations = requests.get(stationsurl)
+    response_stations = requests.get(stationsurl, stream=True)
+    
     #Parse and load geojson records from client
     parse_stations = json.loads(response_stations.text)
 
