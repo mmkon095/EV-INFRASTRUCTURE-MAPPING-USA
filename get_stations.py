@@ -1,8 +1,9 @@
 #!pip install -r requirements.txt
 
 #Importing the necessary packages
-import requests, json
+import requests, json, time
 from requests.adapters import HTTPAdapter
+from requests.exceptions import ChunkedEncodingError, RequestException
 from urllib3.util import Retry
 #from config import *
 import streamlit as st
@@ -11,7 +12,7 @@ stationsurl = st.secrets["stationsurl"]
 
 
 
-@st.cache_data
+@st.cache_data(ttl=604800) #cache for 7 days
 def get_stations():
 
     # 1. Create a session
@@ -19,9 +20,12 @@ def get_stations():
 
     # 2. Set up retry rules
     retries = Retry(
-        total=3,            # Total number of retries
+        total=5,            # Total number of retries
+        connect=5,
+        read=5,
         backoff_factor=1,   # Wait 1s, 2s, 4s between retries
-        status_forcelist=[500, 502, 503, 504],
+        status_forcelist=[429, 500, 502, 503, 504],
+        allowed_methods=["GET"],
         raise_on_status=False
     )
 
@@ -30,11 +34,27 @@ def get_stations():
     session.mount("https://", adapter)
     session.mount("http://", adapter)
 
-    #Establish connection to NLR API client
-    response_stations = requests.get(stationsurl, stream=True)
-    
-    #Parse and load geojson records from client
-    parse_stations = json.loads(response_stations.text)
+   # Establish connection to NLR API client
+    for attempt in range(3):
+        try:
+            response_stations = session.get(
+                stationsurl,
+                timeout=(10, 300)
+            )
+
+            response_stations.raise_for_status()
+
+            # Parse and load geojson records
+            parse_stations = response_stations.json()
+
+            break
+
+        except (ChunkedEncodingError, RequestException) as e:
+            if attempt == 2:
+                st.error(f"Unable to download station data: {e}")
+                raise
+
+            time.sleep(2 ** attempt)
 
     #Extract features from geojson records
     features = parse_stations['features']
